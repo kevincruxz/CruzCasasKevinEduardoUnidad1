@@ -1,9 +1,10 @@
 import React from 'react'
 import './Menu.css';
 
-const Menu = () => {
+const Menu = ({ cerrarMenu, estado }) => {
     return (
-        <div className={`menu shadow p-4 d-flex flex-column align-items-center ${}`}>
+        <div className={`menu shadow p-4 d-flex flex-column align-items-center ${estado ? 'abierto' : ''}`}>
+            <img src="/img/x.png" alt="cerrar menu" className='boton-cerrar' onClick={cerrarMenu} />
             <h3 className="text-primary mb-5 text-center">Menu de Navegacion</h3>
             <div className="d-flex flex-column">
                 <a className="btn btn-primary mb-2" href="/">Inicio</a>

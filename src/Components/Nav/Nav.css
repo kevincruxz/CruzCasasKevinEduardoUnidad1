@@ -1,0 +1,9 @@
+.menu-icon {
+    width: 40px;
+    transition: 0.2s;
+}
+
+.menu-icon:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}

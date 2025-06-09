@@ -1,0 +1,18 @@
+import React from 'react'
+import './Menu.css';
+
+const Menu = () => {
+    return (
+        <div className={`menu shadow p-4 d-flex flex-column align-items-center ${}`}>
+            <h3 className="text-primary mb-5 text-center">Menu de Navegacion</h3>
+            <div className="d-flex flex-column">
+                <a className="btn btn-primary mb-2" href="/">Inicio</a>
+                <a className="btn btn-secondary mb-2" href="/about">Acerca de</a>
+                <a className="btn btn-success mb-2" href="/services">Servicios</a>
+                <a className="btn btn-danger mb-2" href="/contact">Contacto</a>
+            </div>
+        </div>
+    )
+}
+
+export default Menu;

@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './Components/Nav';
 import Menu from './Components/Menu';
 import { useState } from 'react';
+import Main from './Components/Main';
 
 function App() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -15,6 +16,7 @@ function App() {
       <div className={`oscuridad ${menuAbierto ? 'oscuridad-abierta' : ''}`}></div>
       <Nav abrirMenu={abrirMenu} />
       <Menu cerrarMenu={cerrarMenu} estado={menuAbierto} />
+      <Main />
     </>
   )
 }

@@ -12,12 +12,12 @@ function App() {
   const cerrarMenu = () => setMenuAbierto(false);
 
   return (
-    <>
+    <div className='app'>
       <div className={`oscuridad ${menuAbierto ? 'oscuridad-abierta' : ''}`}></div>
       <Nav abrirMenu={abrirMenu} />
       <Menu cerrarMenu={cerrarMenu} estado={menuAbierto} />
       <Main />
-    </>
+    </div>
   )
 }
 

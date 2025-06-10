@@ -4,6 +4,7 @@ import Nav from './Components/Nav';
 import Menu from './Components/Menu';
 import { useState } from 'react';
 import Main from './Components/Main';
+import Products from './Components/Products';
 
 function App() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -17,6 +18,7 @@ function App() {
       <Nav abrirMenu={abrirMenu} />
       <Menu cerrarMenu={cerrarMenu} estado={menuAbierto} />
       <Main />
+      <Products />
     </div>
   )
 }

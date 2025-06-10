@@ -2,9 +2,31 @@
     position: relative;
 }
 
-.burro {
+.burrote {
     width: 30%;
     position: absolute;
     right: 14vw;
     top: 8vh;
+}
+
+.burrote:hover {
+    animation: mover-burro 0.3s infinite;
+}
+
+@keyframes mover-burro {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }

@@ -35,7 +35,7 @@ const Main = () => {
     }, []);
 
     return (
-        <div className="main container mt-4">
+        <div className="main container mt-4 mb-5">
             <div>
                 <h4 className='mb-4'>
                     <Typewriter
@@ -50,8 +50,7 @@ const Main = () => {
                 <button className={`btn ${loginAbierto ? 'btn-primary' : 'btn-secondary'}`} onClick={abrirLogin}>Iniciar Sesion</button>
                 {loginAbierto ? <Login /> : <Register />}
             </div>
-            <img src='./img/burrito.png' className='burro' ref={imageRef} />
-            <br /><br /><br /><br /><br /><br />
+            <img src='./img/burrito.png' className='burrote' ref={imageRef} />
         </div>
     )
 }

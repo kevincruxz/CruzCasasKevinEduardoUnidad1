@@ -1,0 +1,20 @@
+.burro {
+    width: 30%;
+}
+
+.burro h5, .burro p {
+    margin: 0;
+}
+
+.icono-burro {
+    width: 100%;
+    height: 200px;
+}
+
+.carrito {
+    width: 40px;
+    background-color: red;
+    padding: 2px;
+    border: 2px black solid;
+    border-radius: 5px;
+}

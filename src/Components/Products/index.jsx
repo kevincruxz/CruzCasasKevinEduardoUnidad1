@@ -1,26 +1,59 @@
 import Burro from '../Burro'
+import ModalProducts from '../ModalProducts'
 import './Products.css'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
-const Products = () => {
+const Products = ({ abrirModal, cerrarModal, estado, cambiarRefresh, refresh }) => {
+    const [listaProductos, setListaProductos] = useState([]);
+
+    const fetchProductos = async () => {
+        try {
+            const response = await axios.get('http://localhost:5035/api/Productos/productos');
+            setListaProductos(response.data);
+        } catch (error) {
+            console.error('Error al obtener productos:', error);
+        }
+    }
+
+    useEffect(() => {
+        fetchProductos();
+    }, [refresh]);
+
     return (
         <div className='productos container'>
             <h2 className='text-center my-5'>Nuestros Burros</h2>
+            <button className='btn btn-primary mb-3 ms-4' onClick={abrirModal}>Agregar Producto</button>
             <div className='d-flex gap-4 flex-wrap justify-content-center'>
-                <Burro image="https://www.infobae.com/resizer/v2/LL7KGOM7VZFPZP4I6NCWUYZPUQ.jpg?auth=f96b70d3af64d8350e90eba7b1b70c08ed192ae09a269219074c1dcc8e0739fe&smart=true&width=1200&height=675&quality=85" nombre="Burro Chido" precio={199} />
-
-                <Burro image="https://assets.elgourmet.com/wp-content/uploads/2023/03/burri_mURAoKIMpxNLG3aec7gWy2BZ5DH4Pu-1024x683.png.webp" nombre="Combo el Pepe" precio={199} />
-
-                <Burro image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK-3kIjE0DBCKemnSOKxPuAnBrBZVRIaYBGw&s" nombre="Burro Chido" precio={199} />
-
-                <Burro image="https://www.infobae.com/resizer/v2/LL7KGOM7VZFPZP4I6NCWUYZPUQ.jpg?auth=f96b70d3af64d8350e90eba7b1b70c08ed192ae09a269219074c1dcc8e0739fe&smart=true&width=1200&height=675&quality=85" nombre="Burro Chido" precio={199} />
-
-                <Burro image="https://www.infobae.com/resizer/v2/LL7KGOM7VZFPZP4I6NCWUYZPUQ.jpg?auth=f96b70d3af64d8350e90eba7b1b70c08ed192ae09a269219074c1dcc8e0739fe&smart=true&width=1200&height=675&quality=85" nombre="Burro Chido" precio={199} />
-
-                <Burro image="https://www.infobae.com/resizer/v2/LL7KGOM7VZFPZP4I6NCWUYZPUQ.jpg?auth=f96b70d3af64d8350e90eba7b1b70c08ed192ae09a269219074c1dcc8e0739fe&smart=true&width=1200&height=675&quality=85" nombre="Burro Chido" precio={199} />
+                {
+                    listaProductos.length === 0 ? (
+                        <h1>Sin Burros Disponibles :(</h1>
+                    ) : listaProductos.map(producto => (
+                            <Burro image={producto.imagen} nombre={producto.nombre} descripcion={producto.descripcion} precio={producto.precio} />
+                        )
+                    )
+                }
             </div>
             
+            {estado && <ModalProducts cerrarModal={cerrarModal} cambiarRefresh={cambiarRefresh} />}
         </div>
     )
 }
 
 export default Products
+
+/*
+
+<Burro image="https://www.infobae.com/resizer/v2/LL7KGOM7VZFPZP4I6NCWUYZPUQ.jpg?auth=f96b70d3af64d8350e90eba7b1b70c08ed192ae09a269219074c1dcc8e0739fe&smart=true&width=1200&height=675&quality=85" nombre="Burro Chido" precio={199} />
+
+<Burro image="https://assets.elgourmet.com/wp-content/uploads/2023/03/burri_mURAoKIMpxNLG3aec7gWy2BZ5DH4Pu-1024x683.png.webp" nombre="Combo el Pepe" precio={199} />
+
+<Burro image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK-3kIjE0DBCKemnSOKxPuAnBrBZVRIaYBGw&s" nombre="Burro Chido" precio={199} />
+
+<Burro image="https://www.infobae.com/resizer/v2/LL7KGOM7VZFPZP4I6NCWUYZPUQ.jpg?auth=f96b70d3af64d8350e90eba7b1b70c08ed192ae09a269219074c1dcc8e0739fe&smart=true&width=1200&height=675&quality=85" nombre="Burro Chido" precio={199} />
+
+<Burro image="https://www.infobae.com/resizer/v2/LL7KGOM7VZFPZP4I6NCWUYZPUQ.jpg?auth=f96b70d3af64d8350e90eba7b1b70c08ed192ae09a269219074c1dcc8e0739fe&smart=true&width=1200&height=675&quality=85" nombre="Burro Chido" precio={199} />
+
+<Burro image="https://www.infobae.com/resizer/v2/LL7KGOM7VZFPZP4I6NCWUYZPUQ.jpg?auth=f96b70d3af64d8350e90eba7b1b70c08ed192ae09a269219074c1dcc8e0739fe&smart=true&width=1200&height=675&quality=85" nombre="Burro Chido" precio={199} />
+
+*/

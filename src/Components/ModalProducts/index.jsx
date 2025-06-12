@@ -1,6 +1,7 @@
 import './ModalProducts.css'
 import React, { useState } from 'react'
 import axios from 'axios'
+import Swal from 'sweetalert2';
 
 export default function ModalProducts({ cerrarModal, cambiarRefresh }) {
     const [producto, setProducto] = useState({
@@ -22,8 +23,13 @@ export default function ModalProducts({ cerrarModal, cambiarRefresh }) {
         try {
             const response = await axios.post('http://localhost:5035/api/Productos/agregar_producto', producto);
             if (response.status === 200) {
-                alert('Producto agregado con éxito');
-                setProducto({ nombre: '', precio: 0, imagen: '', descripcion: '' });
+                Swal.fire({
+                    title: 'Burro Agregado!',
+                    text: 'Se agrego el burro correctamente.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+                setProducto({ nombre: '', precio: '', imagen: '', descripcion: '' });
                 cambiarRefresh();
                 cerrarModal();
             }

@@ -4,7 +4,7 @@ const Burro = (props) => {
     return (
         <div className='burro'>
             <img src={props.image} alt={props.nombre} className='icono-burro' />
-            <div className='d-flex justify-content-between'>
+            <div className='d-flex justify-content-between my-1'>
                 <h5>{props.nombre}</h5>
                 <p>${props.precio}</p>
             </div>

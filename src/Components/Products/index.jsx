@@ -21,21 +21,24 @@ const Products = ({ abrirModal, cerrarModal, estado, cambiarRefresh, refresh }) 
     }, [refresh]);
 
     return (
-        <div className='productos container'>
-            <h2 className='text-center my-5'>Nuestros Burros</h2>
-            <button className='btn btn-primary mb-3 ms-4' onClick={abrirModal}>Agregar Producto</button>
-            <div className='d-flex gap-4 flex-wrap justify-content-center'>
-                {
-                    listaProductos.length === 0 ? (
-                        <h1>Sin Burros Disponibles :(</h1>
-                    ) : listaProductos.map(producto => (
-                            <Burro image={producto.imagen} nombre={producto.nombre} descripcion={producto.descripcion} precio={producto.precio} />
+        <div className='bg-black w-100 p-0 contenedor-productos'>
+            <div className='productos container'>
+                <h2 className='text-center my-5 pt-4'>Nuestros Burros</h2>
+                <button className='btn btn-primary mb-3' onClick={abrirModal}>Agregar Producto</button>
+                <div className='d-flex gap-5 flex-wrap justify-content-around'>
+                    {
+                        listaProductos.length === 0 ? (
+                            <h1>Sin Burros Disponibles :(</h1>
+                        ) : listaProductos.map(producto => (
+                                <Burro image={producto.imagen} nombre={producto.nombre} descripcion={producto.descripcion} precio={producto.precio} />
+                            )
                         )
-                    )
-                }
+                    }
+                </div>
+                
+                {estado && <ModalProducts cerrarModal={cerrarModal} cambiarRefresh={cambiarRefresh} />}
             </div>
-            
-            {estado && <ModalProducts cerrarModal={cerrarModal} cambiarRefresh={cambiarRefresh} />}
+            <br /><br /><br />
         </div>
     )
 }

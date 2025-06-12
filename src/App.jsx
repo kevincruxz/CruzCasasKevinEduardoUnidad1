@@ -6,6 +6,7 @@ import { use, useState } from 'react';
 import Main from './Components/Main';
 import Products from './Components/Products';
 import Espacio from './Components/EspacioXD';
+import { Waves } from './Components/Waves';
 
 function App() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -28,7 +29,8 @@ function App() {
       <Menu cerrarMenu={cerrarMenu} estado={menuAbierto} />
       <Main />
       <Products abrirModal={abrirModal} cerrarModal={cerrarModal} estado={modalAbierto} cambiarRefresh={triggerRefresh} refresh={refresh} />
-      <Espacio />
+      
+      <Waves />
     </div>
   )
 }

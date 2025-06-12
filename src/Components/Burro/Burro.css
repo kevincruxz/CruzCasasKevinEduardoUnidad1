@@ -1,5 +1,11 @@
 .burro {
     width: 30%;
+    transition: 0.3s;
+}
+
+.burro:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .burro h5, .burro p {
@@ -13,8 +19,11 @@
 
 .carrito {
     width: 40px;
-    background-color: red;
-    padding: 2px;
-    border: 2px black solid;
+    background-color: #FF3F33;
+    padding: 5px;
     border-radius: 5px;
+}
+
+.carrito:hover {
+    cursor: pointer;
 }

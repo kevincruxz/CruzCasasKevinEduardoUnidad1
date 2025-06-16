@@ -14,7 +14,7 @@ Este proyecto consiste en una aplicación web de venta de burritos con un fronte
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/kevincruxz/SH1_AppsWebPro.git
+git clone https://github.com/kevincruxz/CruzCasasKevinEduardoUnidad1.git
 cd SH1_AppsWebPro
 ```
 

@@ -15,7 +15,7 @@ Este proyecto consiste en una aplicación web de venta de burritos con un fronte
 
 ```bash
 git clone https://github.com/kevincruxz/CruzCasasKevinEduardoUnidad1.git
-cd SH1_AppsWebPro
+cd CruzCasasKevinEduardoUnidad1
 ```
 
 ### 2. Correr el Frontend

@@ -21,7 +21,7 @@ export default function ModalProducts({ cerrarModal, cambiarRefresh }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5035/api/Productos/agregar_producto', producto);
+            const response = await axios.post('https://localhost:7158/api/Producto/agregar_producto', producto);
             if (response.status === 200) {
                 Swal.fire({
                     title: 'Burro Agregado!',

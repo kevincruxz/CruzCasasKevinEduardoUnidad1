@@ -2,7 +2,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './Components/Nav';
 import Menu from './Components/Menu';
-import { use, useState } from 'react';
+import { useState } from 'react';
 import Main from './Components/Main';
 import Products from './Components/Products';
 import Espacio from './Components/EspacioXD';
@@ -29,7 +29,6 @@ function App() {
       <Menu cerrarMenu={cerrarMenu} estado={menuAbierto} />
       <Main />
       <Products abrirModal={abrirModal} cerrarModal={cerrarModal} estado={modalAbierto} cambiarRefresh={triggerRefresh} refresh={refresh} />
-      
       <Waves />
     </div>
   )

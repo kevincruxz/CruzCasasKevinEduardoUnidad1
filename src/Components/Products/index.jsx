@@ -9,7 +9,7 @@ const Products = ({ abrirModal, cerrarModal, estado, cambiarRefresh, refresh }) 
 
     const fetchProductos = async () => {
         try {
-            const response = await axios.get('http://localhost:5035/api/Productos/productos');
+            const response = await axios.get('https://localhost:7158/api/Producto/get_productos');
             setListaProductos(response.data);
         } catch (error) {
             console.error('Error al obtener productos:', error);

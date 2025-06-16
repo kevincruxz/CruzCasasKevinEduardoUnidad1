@@ -1,0 +1,6 @@
+@SH1_Back_HostAddress = http://localhost:5237
+
+GET {{SH1_Back_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

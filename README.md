@@ -1,16 +1,39 @@
-<<<<<<< HEAD
-# React + Vite
+# Proyecto Fullstack: React + .NET Web APIs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto consiste en una aplicación web de venta de burritos con un frontend hecho en React y un backend construido con ASP.NET Web API.
 
-Currently, two official plugins are available:
+## Estructura del proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+/Frontend_React -> Código del frontend (React)
+/Backend_.NET -> Código del backend (.NET Web API)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# SH1_AppsWebPro
->>>>>>> e9dd04d7979a7c998cf6603c862c03327e7e4c01
+## 🚀 Cómo ejecutar el proyecto
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/kevincruxz/SH1_AppsWebPro.git
+cd SH1_AppsWebPro
+```
+
+### 2. Correr el Frontend
+
+```bash
+cd Frontend_React 
+npm install
+npm run dev
+```
+
+### 3. Correr el Backend
+
+```bash
+cd Backend_.NET
+dotnet restore
+dotnet run
+```
+
+O corriendolo manualmente dentro de Visual Studio
+
+Verificar que el servidor Backend este corriendo en el puerto 7158

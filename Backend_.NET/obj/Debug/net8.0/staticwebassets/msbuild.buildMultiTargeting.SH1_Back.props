@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SH1_Back.props" />
+</Project>
